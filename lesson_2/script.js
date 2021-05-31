@@ -9,15 +9,19 @@ let period = 12;
 console.log(typeof money);
 console.log(typeof income);
 console.log(typeof addExpenses);
+console.log('Длина строки addExpenses составляет ' + addExpenses.length + ' символов');
 
 console.log('Период равен ' + period + ' месяцев');
 console.log('Цель заработать ' + mission + ' бел рублей.');
 
-let arrExpenses = addExpenses.toLowerCase(); // по логике вещей как-то наверное можно объединить в один метод
-console.log(arrExpenses.split(', '));
+// let arrExpenses = addExpenses.toLowerCase(); // по логике вещей как-то наверное можно объединить в один метод
+// console.log(arrExpenses.split(', '));
 
-let budgetDay = 40;
-console.log(budgetDay);
+let arrExpenses = addExpenses.toLowerCase().split(', ');
+console.log(arrExpenses);
+
+let budgetDay = money / 30;
+console.log('Дневной бюджет составляет ' + budgetDay + ' рублей');
 
 
 
