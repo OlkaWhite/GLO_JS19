@@ -14,7 +14,6 @@ let start = function() {
     do{
         money = prompt('Ваш ежемесячный доход?');
     }
-     
     while (!isNumber(money));
 };
 start();
@@ -26,7 +25,6 @@ showTypeOf(money);
 showTypeOf(income);
 showTypeOf(addExpenses);
 
-
 // console.log('Длина строки addExpenses составляет ' + addExpenses.length + ' символов');
 console.log('Период равен ' + period + ' месяцев');
 console.log('Цель заработать ' + mission + ' рублей.');
@@ -37,29 +35,24 @@ console.log(arrExpenses);
 
 deposit = confirm('Есть ли у вас депозит в банке?');
 
-
-
 let expenses = [];
-
 let getExpensesMonth = function() {
     let sum = 0;
-    
+    let sum1 = 0;
         for (let i = 0; i < 2; i++) {
-        
-            expenses [i] = prompt('Введите обязательную статью расходов?', "Машина");
-            sum += +prompt('Во сколько это обойдется?');
-            
+            expenses[i] = prompt('Введите обязательную статью расходов?', "Машина");
+            do{
+                sum1 = prompt('Во сколько это обойдется?');
+            }
+            while (!isNumber(sum1));
+            sum += Number(sum1);
         }
-        
     console.log(expenses);
     return sum;
-    
 };
-console.log(typeof(sum));
 
 let expensesAmount = getExpensesMonth();
 console.log('Сумма всех обязательных платежей ' + expensesAmount);
-
 
 let getAccumulateMonth = function() {
     return money - expensesAmount;
